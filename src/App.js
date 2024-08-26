@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { MapSection } from './MapSection';
+import { useState } from 'react';
+
 
 function App() {
+  const [selectedCareer, setSelectedCareer] = useState("");
+
+  const foo = (event) => setSelectedCareer(event.target.value);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>University Map</h1>
+      <div>
+        <label htmlFor='careerSelect'>De que carrera vienes?</label>
+        <select id='careerSelect' onChange={foo}>
+          <option value=''>Selecciona la carrera</option>
+          <option value='computacion'>Computacion</option>
+        </select>
+      </div>
+      <div>
+        <MapSection selectedCareer={selectedCareer}></MapSection>
+      </div>
     </div>
   );
 }
-
 export default App;
