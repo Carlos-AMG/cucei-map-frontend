@@ -1,7 +1,6 @@
 import React from 'react';
-import { MapSection } from './MapSection';
 import { useState } from 'react';
-
+import { Map } from './components/Map';
 
 function App() {
   const [selectedCareer, setSelectedCareer] = useState("");
@@ -19,7 +18,7 @@ function App() {
         </select>
       </div>
       <div>
-        <MapSection selectedCareer={selectedCareer}></MapSection>
+        <Map campusName={"CUCEI"}/>
       </div>
     </div>
   );
